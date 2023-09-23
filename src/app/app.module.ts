@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { CatComponent } from './components/cat/cat.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AdmincatComponent } from './components/admincat/admincat.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    CatComponent
+    CatComponent,
+    AdmincatComponent
   ],
   imports: [
     BrowserModule,
