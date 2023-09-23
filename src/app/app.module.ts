@@ -7,6 +7,7 @@ import { MainComponent } from './components/main/main.component';
 import { CatComponent } from './components/cat/cat.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AdmincatComponent } from './components/admincat/admincat.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AdmincatComponent } from './components/admincat/admincat.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

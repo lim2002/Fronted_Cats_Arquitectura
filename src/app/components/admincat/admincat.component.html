@@ -2,36 +2,39 @@
 
 <h1>Administrar Datos Curiosos</h1>
 
-  <!-- Formulario para agregar un nuevo dato curioso   (submit)="agregarDato() [(ngModel)]="nuevoDato"" -->
-  <form >
-    <div class="form-group">
-      <label for="nuevoDato">Nuevo Dato Curioso:</label>
-      <input type="text" class="form-control" id="nuevoDato" >
-    </div>
-    <button type="submit" class="btn btn-success">Agregar</button>
-  </form>
+<!-- Formulario para agregar un nuevo dato curioso -->
+<form (submit)="addCat()">
+  <div class="form-group">
+    <label for="nuevoDato">Nuevo Dato Curioso:</label>
+    <input type="text" class="form-control" id="nuevoDato" [(ngModel)]="newFact.mensaje" name="nuevoDato">
+  </div>
+  <button type="submit" class="btn btn-success">Agregar</button>
+</form>
 
-  <!-- Tabla para mostrar la lista de datos curiosos -->
-  <table class="table table-striped mt-4">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Dato Curioso</th>
-        <th scope="col">Tipo</th>
-        <th scope="col">Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let cat of cats">
-        <th scope="row">{{cat.idDato}}</th>
-        <td>{{cat.dato}}</td>
-        <td>{{cat.idTipo}}</td>
-        <td>
-          <button class="btn btn-primary" >Editar</button>
-          <button class="btn btn-danger" >Eliminar</button>
-        </td>
-        <!-- (click)="editar(cat.idDato)"
-             (click)="eliminar(cat.idDato)"-->
-      </tr>
-    </tbody>
-  </table>
+<!-- Tabla para mostrar la lista de datos curiosos -->
+<table class="table table-striped mt-4">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Dato Curioso</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cat of cats">
+      <th scope="row">{{cat.idDato}}</th>
+      <td>{{cat.dato}}</td>
+      <td>{{cat.idTipo}}</td>
+      <td>
+        <button class="btn btn-primary" (click)="editCat(cat.idDato)">Editar</button>
+        <button class="btn btn-danger" (click)="deleteCat(cat.idDato)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+  
+</table>
+<div class="pagination-buttons">
+    <button class="btn btn-primary" (click)="prevPage()">Anterior</button>
+    <button class="btn btn-primary" (click)="nextPage()">Siguiente</button>
+</div>
