@@ -1,0 +1,17 @@
+<h2>user component!</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Dato Curioso</th>
+      <th scope="col">Tipo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cat of cats">
+      <th scope="row">{{cat.idDato}}</th>
+      <td>{{cat.dato}}</td>
+      <td>{{cat.idTipo}}</td>
+    </tr>
+  </tbody>
