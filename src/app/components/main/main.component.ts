@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { KeycloakService } from 'keycloak-angular';
+
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private keycloakService: KeycloakService) { }
 
   ngOnInit(): void {
   }
+
+  public async logout() {
+    await this.keycloakService.logout('http://localhost:4200');
+}
 
 }
