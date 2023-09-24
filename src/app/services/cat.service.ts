@@ -22,20 +22,20 @@ export class CatService {
   constructor(private http: HttpClient) {}
 
   getCats(page: number, size: number): Observable<PagedResponse> {
-    return this.http.get<PagedResponse>(`http://localhost:8080/api/v1/datos/user/?page=${page}&size=${size}`);
+    return this.http.get<PagedResponse>(`http://localhost:8081/api/v1/datos/user/?page=${page}&size=${size}`);
   }
   
 
   addCat(newFact: NewFact): Observable<any> {
-    return this.http.post('http://localhost:8080/api/v1/datos/admin/add', newFact);
+    return this.http.post('http://localhost:8081/api/v1/datos/admin/add', newFact);
   }
 
   editCat(id: number, updatedFact: NewFact): Observable<any> {
-    return this.http.put(`http://localhost:8080/api/v1/datos/admin/edit/${id}`, updatedFact);
+    return this.http.put(`http://localhost:8081/api/v1/datos/admin/edit/${id}`, updatedFact);
   }
 
   deleteCat(id: number): Observable<any> {
-    return this.http.delete(`http://localhost:8080/api/v1/datos/admin/delete/${id}`);
+    return this.http.delete(`http://localhost:8081/api/v1/datos/admin/delete/${id}`);
   }
 
 }
